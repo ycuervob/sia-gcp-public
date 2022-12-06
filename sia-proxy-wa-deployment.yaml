@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: sia-proxy-wa
+  name: sia-proxy-wa
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      io.kompose.service: sia-proxy-wa
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml convert
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sia-proxy-wa
+    spec:
+      containers:
+        - image: ycuervob/sia-proxy:latest
+          name: sia-proxy-wa
+          env:
+            - name: API_HOST
+              value: "10.112.3.124"
+            - name: API_PORT
+              value: "80"
+          ports:
+            - containerPort: 443
+          resources: {}
+      restartPolicy: Always
+status: {}
