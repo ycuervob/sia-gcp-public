@@ -26,7 +26,7 @@ spec:
       containers:
         - env:
             - name: API_HOST
-              value: "10.112.3.124"
+              value: "10.112.3.127"
             - name: API_PORT
               value: "80"
           image: ycuervob/sia-proxy:latest
