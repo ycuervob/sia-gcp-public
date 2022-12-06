@@ -24,7 +24,7 @@ spec:
         io.kompose.service: sia-interface
     spec:
       containers:
-          image: 
+          image: jorodriguezal/sia_interface:latest
           name: sia-interface
           ports:
             - containerPort: 8080
