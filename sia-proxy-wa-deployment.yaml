@@ -28,7 +28,7 @@ spec:
           name: sia-proxy-wa
           env:
             - name: API_HOST
-              value: "10.112.3.124"
+              value: "10.112.3.121"
             - name: API_PORT
               value: "80"
           ports:
