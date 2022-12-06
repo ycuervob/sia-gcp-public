@@ -24,13 +24,13 @@ spec:
         io.kompose.service: sia-proxy-wa
     spec:
       containers:
-        - image: ycuervob/sia-proxy:latest
-          name: sia-proxy-wa
-          env:
+        - env:
             - name: API_HOST
-              value: "10.112.3.121"
+              value: "10.112.3.124"
             - name: API_PORT
               value: "80"
+          image: ycuervob/sia-proxy:latest
+          name: sia-proxy-wa
           ports:
             - containerPort: 443
           resources: {}
